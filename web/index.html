@@ -63,9 +63,15 @@
         <div class="step-card">
           <div class="step-header">
             <span class="step-index">02</span>
-            <div>
-              <h2 class="step-title">Escolha o Estilo Visual da Arte</h2>
-              <p class="step-subtitle">Cada estilo injeta parâmetros visuais específicos para o traço sair com a cara da marca.</p>
+            <div class="step-header-content">
+              <div>
+                <h2 class="step-title">Escolha o Estilo Visual da Arte</h2>
+                <p class="step-subtitle">Cada estilo injeta parâmetros visuais específicos para o traço sair com a cara da marca.</p>
+              </div>
+              <button type="button" class="gallery-open-btn" id="open-full-gallery-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                Ver Galeria com Exemplos (Fotos)
+              </button>
             </div>
           </div>
 
@@ -79,7 +85,10 @@
                   <span class="engine-tag">Ideogram v2</span>
                 </div>
                 <p class="style-detail">Combina fonte romana clássica com caligrafia cursiva fluida (estilo revista de luxo).</p>
-                <span class="style-hint">Ideal para: Frases devocionais e reflexões longas nas costas.</span>
+                <div class="style-card-footer">
+                  <span class="style-hint">Ideal para: Frases devocionais e reflexões longas.</span>
+                  <button type="button" class="view-sample-btn" data-style-target="editorial" title="Ver visual deste estilo">Ver Exemplo 👁</button>
+                </div>
               </div>
             </label>
 
@@ -92,7 +101,10 @@
                   <span class="engine-tag">Ideogram v2</span>
                 </div>
                 <p class="style-detail">Letras sans-serif gigantes em caixa alta, levemente arqueadas no topo das costas.</p>
-                <span class="style-hint">Ideal para: Nomes fortes, afirmações de fé e selos contemporâneos.</span>
+                <div class="style-card-footer">
+                  <span class="style-hint">Ideal para: Nomes fortes e afirmações de fé.</span>
+                  <button type="button" class="view-sample-btn" data-style-target="bold" title="Ver visual deste estilo">Ver Exemplo 👁</button>
+                </div>
               </div>
             </label>
 
@@ -105,7 +117,10 @@
                   <span class="engine-tag highlight">Recraft V3 (SVG)</span>
                 </div>
                 <p class="style-detail">Traço clássico estilo Albrecht Dürer/gravura antiga em madeira, com alto contraste preto e branco puro.</p>
-                <span class="style-hint">Ideal para: Ovelhas, leão, pastor, mãos postas e gravuras bíblicas.</span>
+                <div class="style-card-footer">
+                  <span class="style-hint">Ideal para: Ovelhas, leão, pastor e gravuras.</span>
+                  <button type="button" class="view-sample-btn" data-style-target="stencil" title="Ver visual deste estilo">Ver Exemplo 👁</button>
+                </div>
               </div>
             </label>
 
@@ -118,7 +133,10 @@
                   <span class="engine-tag">Ideogram / Flux</span>
                 </div>
                 <p class="style-detail">Obras sacras renascentistas pontilhadas, com bordas inferiores que somem em degradê no tecido.</p>
-                <span class="style-hint">Ideal para: Quadros históricos como A Última Ceia ou Pietà.</span>
+                <div class="style-card-footer">
+                  <span class="style-hint">Ideal para: A Última Ceia, Pietà e cenas sacras.</span>
+                  <button type="button" class="view-sample-btn" data-style-target="halftone" title="Ver visual deste estilo">Ver Exemplo 👁</button>
+                </div>
               </div>
             </label>
 
@@ -131,7 +149,10 @@
                   <span class="engine-tag">Ideogram v2</span>
                 </div>
                 <p class="style-detail">Tipografia gótica medieval pesada, cruzes estilizadas e detalhes afiados de alta costura.</p>
-                <span class="style-hint">Ideal para: Visual underground pesado, salmos e palavras de autoridade.</span>
+                <div class="style-card-footer">
+                  <span class="style-hint">Ideal para: Salmos e estética underground de luxo.</span>
+                  <button type="button" class="view-sample-btn" data-style-target="gothic" title="Ver visual deste estilo">Ver Exemplo 👁</button>
+                </div>
               </div>
             </label>
 
@@ -144,7 +165,10 @@
                   <span class="engine-tag highlight">Recraft V3</span>
                 </div>
                 <p class="style-detail">Vetor limpo de traço contínuo fino, sem sombras pesadas ou texturas poluídas.</p>
-                <span class="style-hint">Ideal para: Estampas sutis de peito central ou estética minimal chic.</span>
+                <div class="style-card-footer">
+                  <span class="style-hint">Ideal para: Estampas sutis de peito central.</span>
+                  <button type="button" class="view-sample-btn" data-style-target="minimal" title="Ver visual deste estilo">Ver Exemplo 👁</button>
+                </div>
               </div>
             </label>
           </div>
@@ -262,6 +286,67 @@
         </div>
       </aside>
     </main>
+  </div>
+
+  <!-- Modal: Galeria Visual de Estilos -->
+  <div class="modal-backdrop" id="style-modal" hidden>
+    <div class="modal-window" role="dialog" aria-modal="true" aria-labelledby="modal-style-title">
+      <div class="modal-top">
+        <div class="modal-header-text">
+          <span class="modal-kicker">Guia Visual da Christopher</span>
+          <h2 class="modal-title" id="modal-style-title">Exemplos do Estilo</h2>
+        </div>
+        <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Fechar galeria">✕</button>
+      </div>
+
+      <!-- Navegação dos Estilos dentro do Modal -->
+      <div class="modal-tabs" role="tablist" id="modal-tabs-list">
+        <button type="button" class="modal-tab-pill active" data-style="editorial">Editorial</button>
+        <button type="button" class="modal-tab-pill" data-style="bold">Bold Streetwear</button>
+        <button type="button" class="modal-tab-pill" data-style="stencil">Xilogravura / Stencil</button>
+        <button type="button" class="modal-tab-pill" data-style="halftone">Vintage Halftone</button>
+        <button type="button" class="modal-tab-pill" data-style="gothic">Gothic Blackletter</button>
+        <button type="button" class="modal-tab-pill" data-style="minimal">Linha Fina</button>
+      </div>
+
+      <!-- Corpo do Modal: Preview da Peça + Ficha Técnica -->
+      <div class="modal-body-grid">
+        <!-- Visual Mockup Realista -->
+        <div class="modal-visual-col">
+          <div class="tshirt-mockup-frame" id="mockup-frame">
+            <div id="mockup-render-target"></div>
+          </div>
+          <span class="mockup-caption" id="mockup-caption">Visual da estampa aplicada nas costas da camiseta Oversized</span>
+        </div>
+
+        <!-- Ficha Técnica & Descrição Didática -->
+        <div class="modal-info-col">
+          <div class="info-badge-row">
+            <span class="badge-engine" id="modal-engine-badge">Ideogram v2</span>
+            <span class="badge-aspect">Backprint 4:5</span>
+          </div>
+
+          <h3 class="info-heading" id="modal-style-heading">Editorial Tipográfico</h3>
+          <p class="info-description" id="modal-style-desc"></p>
+
+          <div class="info-block">
+            <h4 class="info-subtitle">Peça de Referência no Catálogo (@christopherr_rj):</h4>
+            <p class="info-highlight" id="modal-reference-piece"></p>
+          </div>
+
+          <div class="info-block">
+            <h4 class="info-subtitle">Ideias que combinam com este estilo:</h4>
+            <ul class="info-bullets" id="modal-style-ideas"></ul>
+          </div>
+
+          <div class="modal-footer-action">
+            <button type="button" class="select-style-action-btn" id="modal-apply-style-btn">
+              Usar este Estilo no Gerador ✓
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="app.js"></script>
