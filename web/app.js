@@ -52,7 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================
   // DADOS VISUAIS DA GALERIA (MOCKUPS & FICHA)
-  // =======================================  const VISUAL_SHOWCASE = {
+  // ==========================================
+  const VISUAL_SHOWCASE = {
     editorial: {
       title: "Editorial Tipográfico (Serif + Script)",
       engine: "Ideogram v2",
@@ -124,11 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
         "Pomba da Paz / Espírito Santo em vetor geométrico fino",
         "Rosto sereno de Cristo com contorno de coroa de espinhos minimalista"
       ]
-    }
-  };-spacing="1">CHRISTOPHER STUDIO</text>
-          </g>
-        </svg>
-      `
     }
   };
 
